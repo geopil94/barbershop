@@ -8,33 +8,39 @@
     <meta name='description' content='the Best Barbershop'>
     <meta name='author' content='SitePoint'>
 
-    <link rel='stylesheet' href='css/styles.css'>
+    <link rel='stylesheet' href='index.css'>
 
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>*logo*</li>
-                <li>Главная</li>
-                <li>Услуги</li>
-                <li>Магазин</li>
-                <li>Галерея</li>
-                <li>Новости</li>
-                <li>Вакансии</li>
-                <li>Адреса & контакты</li>
-            </ul>
+    <header class = 'header'>
+        <nav class = 'navbar bordered'>
+                <div class = 'col-10 bordered'>
+                    <ul class = 'main-menu'>
+                        <li class = 'main-menu__logo bordered'><img src = './assets/logo (1).svg' width = '125px', height = '125px'></li>
+                        <li class = 'main-menu__item bordered'>Главная</li>
+                        <li class = 'main-menu__item bordered'>Услуги</li>
+                        <li class = 'main-menu__item bordered'>Магазин</li>
+                        <li class = 'main-menu__item bordered'>Галерея</li>
+                        <li class = 'main-menu__item bordered'>Новости</li>
+                        <li class = 'main-menu__item bordered'>Вакансии</li>
+                        <li class = 'main-menu__item bordered'>Адреса & контакты</li>
+                    </ul>
+                </div>
 
-            <ul>
-                <li>Личный Кабинет</li>
-            </ul>
+                <div class = 'col-1 bordered'>
+                    <ul class = 'sign-in'>
+                        <li class = 'sign-in__item'>Личный Кабинет</li>
+                    </ul>
+                </div>
 
-            <ul>
-                <li>VK</li>
-                <li>Facebook</li>
-                <li>Instagram</li>
-            </ul>
+                <div class = 'col-1 bordered'>
+                    <ul class = 'social-media'>
+                        <li class = 'social-media__item'>VK</li>
+                        <li class = 'social-media__item'>Facebook</li>
+                        <li class = 'social-media__item'>Instagram</li>
+                    </ul>
+                </div>  
         </nav>
     </header>
 
@@ -62,7 +68,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class = 'footer'>
         <section> 
             <h1>ООО'Рога и Копыта'</h1>
             <p>не несёт ни за что никакой ответственности и прочая и прочая...</p>

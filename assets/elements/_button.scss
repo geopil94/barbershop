@@ -1,0 +1,111 @@
+.btn {
+    box-sizing: border-box;
+    padding: 4px;
+    min-width: 50px;
+    max-height: 50px;
+    flex-basis: 100px;
+
+    background-color: white; 
+    color: black; 
+    border: 2px solid darkblue;
+
+    @include font-size-height-align(14px, 14px, center);
+
+    cursor: pointer;
+    transition-duration: 0.5s;
+
+    &:focus {
+        outline: none;
+        background-color: lightblue;
+        border: 2px solid darkblue;
+    }
+
+    &:hover {
+        background-color: lightblue;
+        border: 2px solid darkblue;
+    }
+
+    &:active {
+        background-color:darkblue;
+        border: 2px solid lightblue;
+        color: white;
+    }
+    
+    &-big {
+        @extend .btn;
+        @include font-size-height-align(20px, 20px, center);
+
+        padding: 8px;
+    }
+
+    &-small {
+        @extend .btn;
+        @include font-size-height-align(12px, 12px, center);
+    }
+
+    &-disabled {
+        @extend .btn;
+
+        background-color: darkgrey;
+        border: 2px solid darkgrey;
+
+        &:focus {
+            outline: none;
+            background-color: darkgrey;
+            border: 2px solid darkgrey;
+            
+        }
+
+        &:hover {
+            background-color: darkgrey;
+            border: 2px solid darkgrey;
+
+            cursor: not-allowed;
+        }
+        
+        &:active {
+            background-color: darkgrey;
+            border: 2px solid darkgrey;
+            color: black;
+
+            cursor: not-allowed;
+        }
+    }
+
+    &-primary {
+        @extend .btn;
+    }
+
+    &-secondary {
+        @extend .btn;
+    }
+
+    &-warning {
+        @extend .btn;
+
+        background-color: rgb(255, 147, 147);
+        border: 2px solid darkred;
+
+        &:focus {
+            outline: none;
+            background-color: red;
+            border: 2px solid darkred;
+        }
+
+        &:hover {
+            background-color: red;
+            border: 2px solid darkred;
+        }
+    
+        &:active {
+            background-color:darkred;
+            border: 2px solid red;
+            color: white;
+        }
+    }
+    &-form {
+        @extend .btn;
+        width: 33%;
+        margin: 4px;
+    }
+}

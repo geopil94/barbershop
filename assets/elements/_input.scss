@@ -1,0 +1,62 @@
+form {
+    display: block;
+}
+
+label {
+    display: block;
+    @include font-size-height-align(16px, 16px, center);
+    margin-top: 8px;
+}
+
+input{
+    margin: 4px;
+    &[type = 'text'] {
+        @include font-size-height-align(24px, 24px, center);
+    }
+    &[type = 'password'] {
+        @include font-size-height-align(24px, 24px, center);
+    }
+}
+
+.input {
+    &-disabled {
+        background-color: darkgrey;
+        &:focus {
+            outline: none;
+            background-color: darkgrey;
+            
+        }
+    
+        &:hover {
+            background-color: darkgrey;
+    
+            cursor: not-allowed;
+        }
+        
+        &:active {
+            background-color: darkgrey;
+            color: black;
+    
+            cursor: not-allowed;
+        }
+    }
+    &-error {
+        border: 2px solid red;
+        &:focus {
+            border: none;
+            border-width: 2px;
+            border-style: inset;
+            
+        }
+    
+        &:hover {
+        }
+        
+        &:active {
+            border: none;
+            border-width: 2px;
+            border-style: inset;
+        }
+    }
+}
+ 

@@ -1,0 +1,53 @@
+@import './helpers/index';
+@import './global/index';
+@import './elements/index';
+@import './components/index';
+
+.header {   
+    box-sizing: border-box;
+    width: 100%;
+    @include font-size-height-align(24px, 24px, center);
+    background-color: red;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}   
+
+.main-menu__item {
+    padding: 20px;
+}
+
+.main-menu__logo {
+    padding: -20px;
+}
+
+.sign-in {
+
+}
+
+.footer {
+    padding: 8px;
+    width: 100%;
+    @include font-size-height-align(16px, 16px, center);
+    background-color: darkolivegreen;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.col-10, .col-1 {
+    display:block;
+}

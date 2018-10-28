@@ -1,0 +1,41 @@
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.float-left {
+    @include float(left);
+}
+
+.float-right {
+    @include float(right);
+}
+
+.float-none {
+    @include float(none);
+}
+
+.margin {
+    @each $key, $value in $margin {
+        &-#{$key} {
+            margin: $value !important;
+        }
+    }
+}
+
+.padding {
+    @each $key, $value in $padding {
+        &-#{$key} {
+            margin: $value !important;
+        }
+    }
+}
+
+.pos {
+    @each $key, $value in $position {
+        &-#{$key} {
+            position: $value;
+        }
+    }
+}
