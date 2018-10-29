@@ -17,6 +17,22 @@ html {
     background-color: rgba(158, 210, 247, 0.45);
 }
 
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.col-10, .col-1 {
+    display:block;
+}
+
 .main-menu {
     max-height: 120px;
     display: flex;
@@ -118,18 +134,3 @@ html {
     background-color: darkolivegreen;
 }
 
-.navbar {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.col-10, .col-1 {
-    display:block;
-}
