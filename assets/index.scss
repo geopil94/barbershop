@@ -3,30 +3,113 @@
 @import './elements/index';
 @import './components/index';
 
+/* open-sans-regular - cyrillic */
+html {
+    font-family: Calibri, sans-serif;
+}
+
 .header {   
+    position: fixed;
+    top: 0%;
     box-sizing: border-box;
     width: 100%;
     @include font-size-height-align(24px, 24px, center);
-    background-color: red;
+    background-color: rgba(158, 210, 247, 0.45);
 }
 
 .main-menu {
+    max-height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    flex-wrap: nowrap;
 }   
 
 .main-menu__item {
+    line-height: 80px;
+    max-height: 120px;
+    min-width: 80px;
     padding: 20px;
+    flex-grow: 1;
+    transition: all 1s;
+}
+
+.main-menu__item:hover {
+    font-size: 44px;
+    background-color: darken(rgba(158, 210, 247, 0.45), 20%);
 }
 
 .main-menu__logo {
+    transition: all 0.8s;
     padding: -20px;
+    flex-grow: 1;
+}
+
+.main-menu__logo:hover {
+    width: 125px;
+    background-color: darken(rgba(158, 210, 247, 0.45), 20%); 
+}
+
+.main-menu__anchor {
 }
 
 .sign-in {
-
+    max-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
 }
+
+.sign-in__item {
+    max-height: 120px;
+    min-width: 80px;
+    padding: 20px;  
+    transition: all ease-in-out 0.8s;
+}
+
+.sign-in__item:hover {
+    transform: rotate(450deg);
+}
+
+.social-media {
+    max-height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.social-media__item {
+    @keyframes horizontal-shake {
+        15% {
+          transform: translateX(6px);
+        }
+        30% {
+          transform: translateX(-6px);
+        }
+        40% {
+          transform: translateX(4px);
+        }
+        50% {
+          transform: translateX(-4px);
+        }
+        65% {
+          transform: translateX(2px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+    }
+}  
+
+.social-media__item:hover {
+    animation: horizontal-shake 0.8s ease-in-out;
+    animation-iteration-count: 1;
+}
+
+
+
 
 .footer {
     padding: 8px;
@@ -45,7 +128,6 @@
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
 }
 
 .col-10, .col-1 {
