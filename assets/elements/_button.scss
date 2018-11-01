@@ -1,18 +1,18 @@
 .btn {
     box-sizing: border-box;
-    padding: 4px;
+    padding: 12px;
+    white-space: nowrap; 
     min-width: 50px;
     max-height: 50px;
     flex-basis: 100px;
-
+    border-radius: 0.5em;
     background-color: white; 
     color: black; 
     border: 2px solid darkblue;
 
-    @include font-size-height-align(14px, 14px, center);
-
+    @include font-size-height-align(20px, 24px, center);
     cursor: pointer;
-    transition-duration: 0.5s;
+    transition: all ease-in-out 0.5s;
 
     &:focus {
         outline: none;
@@ -31,19 +31,18 @@
         color: white;
     }
     
-    &-big {
+    &--big {
         @extend .btn;
         @include font-size-height-align(20px, 20px, center);
-
         padding: 8px;
     }
 
-    &-small {
+    &--small {
         @extend .btn;
         @include font-size-height-align(12px, 12px, center);
     }
 
-    &-disabled {
+    &--disabled {
         @extend .btn;
 
         background-color: darkgrey;
@@ -72,15 +71,7 @@
         }
     }
 
-    &-primary {
-        @extend .btn;
-    }
-
-    &-secondary {
-        @extend .btn;
-    }
-
-    &-warning {
+    &--warning {
         @extend .btn;
 
         background-color: rgb(255, 147, 147);
@@ -103,9 +94,26 @@
             color: white;
         }
     }
-    &-form {
+    &--form {
         @extend .btn;
         width: 33%;
         margin: 4px;
     }
 }
+
+.btn--primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn--primary:hover, .btn--primary:focus {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+  
+  .btn--primary.disabled, .btn--primary:disabled {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
