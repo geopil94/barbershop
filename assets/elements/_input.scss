@@ -10,10 +10,10 @@ label {
 
 input{
     margin: 4px;
-    &[type = 'text'] {
+    &[type="text'] {
         @include font-size-height-align(24px, 24px, center);
     }
-    &[type = 'password'] {
+    &[type="password'] {
         @include font-size-height-align(24px, 24px, center);
     }
 }

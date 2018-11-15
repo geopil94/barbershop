@@ -8,7 +8,7 @@
     <meta name="description" content="the Best Barbershop">
     <meta name="author" content="SitePoint">
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../index.css">
 
 </head>
 
@@ -18,7 +18,7 @@
                 <div class = "col-9">
                     <ul class = "main-menu">
                         <li class = "main-menu__logo right-bordered">
-                            <img src = "./assets/logo (1).svg" width = "120px", height = "120px">
+                            <img src = "../assets/logo (1).svg" width = "120px", height = "120px">
                         </li>
                         <li class = "main-menu__item right-bordered"><a class = "main-menu__anchor" href = "#">Главная</a></li>
                         <li class = "main-menu__item right-bordered"><a class = "main-menu__anchor" href = "#services">Услуги</a></li>
@@ -31,12 +31,14 @@
 
                 <div class = "col-2">
                     <ul class = "sign-in">
-                        <li class = "sign-in__item sign-in__item--rotating">
-                            <img onclick = 'document.getElementById("loginBlock").style.display="block"' 
-                            src = "./assets/login-icon.svg" width = "40px", height = "40px">
+                        <li class = 'sign-in__log-in'></li>
+                    </ul>
+                    <ul class = 'personal-menu'>
+                        <li class = 'personal-menu__item'>
+                            Мои сеансы
                         </li>
-                        <li class = "sign-in__item"><button onclick = 'document.getElementById("registerBlock").style.display="block"' 
-                            class = "btn navbar__btn btn--primary">Регистрация</button>
+                        <li class = 'personal-menu__item'>
+                            <a class = 'return-link' href = '../index.html'>Выйти</a>
                         </li>
                     </ul>
                 </div>
@@ -44,10 +46,10 @@
                 <div class = "col-1">
                     <ul class = "social-media">
                         <li class = "social-media__item social-media__item--vk">
-                            <a href = 'https://vk.com'><img src = "./assets/vk.svg" width = "32px", height = "32px"></a>
+                            <a href = 'https://vk.com'><img src = "../assets/vk.svg" width = "32px", height = "32px"></a>
                         </li>
                         <li class = "social-media__item social-media__item--instagram">
-                            <a href = 'https://www.instagram.com/'><img src = "./assets/instagram.svg" width = "32px", height = "32px"></a>
+                            <a href = 'https://www.instagram.com/'><img src = "../assets/instagram.svg" width = "32px", height = "32px"></a>
                         </li>
                     </ul>
                 </div>  
@@ -56,78 +58,33 @@
 
     <main>
         <section class = "main main__page">
-            <div id = "loginBlock" class = "modal">
-                <form class = "modal-content" action = './user/index.html' method = 'GET'>
-                    <span onclick = 'document.getElementById("loginBlock").style.display="none"' 
-                    class = "close" title = "Close Modal">&times;</span>
-                
-                    <div class = "container">
-                    <label for = "userName"><b>Логин</b></label>
-                    <input type = "text" placeholder = "Ваш Логин" name = "userName" required>
-                
-                    <label for = "psw"><b>Пароль</b></label>
-                    <input type = "password" placeholder = "Ваш Пароль" name = "psw" required>
-                        
-                    <button class = "btn form__btn btn--primary" type = "submit">Войти</button>
-                    <label>
-                        <input type = "checkbox" checked = "checked" name = "remember"> Запомнить меня
-                    </label>
-                    </div>
-                
-                    <div class = "container container--bottom" style = "background-color:#f1f1f1">
-                    <span><a href = "#">Забыли пароль?</a></span><br>
-                    <span>Вы новенький? Тогда <a class = 'register-link' href = "#">Зарегистрируйтесь!</a></span>
-                    </div>
-                </form>
-            </div>
 
-            <div id = "registerBlock" class = "modal">
+            <div id = "appointmentBlock" class = "modal">
                 <form class = "modal-content">
-                    <span onclick = 'document.getElementById("registerBlock").style.display="none"' class = "close" title = "Close Modal">&times;</span>
+                    <span onclick = 'document.getElementById("appointmentBlock").style.display="none"' class = "close" title = "Close Modal">&times;</span>
                 
                     <div class = "container">
-                    <label for = "userName"><b>Логин</b></label>
-                    <input type = "text" placeholder = "Придумайте Логин" name = "userName" minlength = '3', maxlength = '15' required>
-                
-                    <label for = "psw"><b>Пароль</b></label>
-                    <input type = "password" placeholder = "Придумайте Пароль" name = "psw" minlength = '3', maxlength = '15' required>
-
-                    <label for = "repeat-psw"><b>Повторите Пароль</b></label>
-                    <input type = "password" placeholder = "Повторите Пароль" name = "repeat-psw" minlength = '3', maxlength = '15' required>
+                    <select placeholder = 'выберите дату'>
+                        <option value = 'date1'>здесь дата</option>
+                        <option value = 'date2'>здесь другая дата</option>
+                    </select>
+                    
+                    <select placeholder = 'выберите услугу'>
+                        <option value = 'basic-haircut'>Мужская стрижка</option>
+                        <option value = 'child-haircut'>Детская стрижка</option>
+                        <option value = 'beard-haircut'>Стрижка бороды</option>
+                    </select>
                         
-                    <button class = "btn form__btn btn--primary" type = "submit">Зарегистрироваться</button>
+                    <button class = "btn form__btn btn--primary" type = "submit">Записаться!</button>
                     </div>
                 </form>
             </div>
+
             <h1 class = "main__h1">The Best Barbershop</h1>
             <h2 class = "main__h2">Лучший барбершоп - лучшие стрижки!</h2>
+            <button onclick = 'document.getElementById("appointmentBlock").style.display="block"' class = "main__button btn btn--primary">Записаться</button>
         </section>
-        <section class = "main main__services" id = "services">
-            <h1 class = "main__h1">Услуги</h1>
-            <h2 class = "main__h2">Здесь вы можете ознакомиться с прейскурантом и выбрать дополнительные опции стрижки</h2>
-            <table class = "table table--hover">
-                    <thead class = "thead--dark">
-                      <tr>
-                        <th colspan = "2" scope = "col">Услуга</th>
-                        <th scope = "col">Стоимость</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td colspan = "2">Мужская стрижка</td>
-                        <td>от 1500 &#8381;</td>
-                      </tr>
-                      <tr>
-                        <td colspan = "2">Детская стрижка</td>
-                        <td>от 1250 &#8381;</td>
-                      </tr>
-                      <tr>
-                        <td colspan = "2">Стрижка бороды</td>
-                        <td>от 1000 &#8381;</td>
-                      </tr>
-                    </tbody>
-                  </table>
-        </section>
+        
         <section class = "main main__gallery" id = "gallery">
             <h1  class = "main__h1">Галерея</h1>
             <h3 class = "main__h3">Все самые лучшие стрижки и самые лучшие бороды в одном месте!</h2>
@@ -141,19 +98,19 @@
                 </ol>
                 <div class = "carousel-inner">
                   <div class = "carousel-item active">
-                    <img class = "d-block w-100" src = "./assets/pictures/hair1.jpg" alt = "Первый слайд">
+                    <img class = "d-block w-100" src = "../assets/pictures/hair1.jpg" alt = "Первый слайд">
                   </div>
                   <div class = "carousel-item">
-                    <img class = "d-block w-100" src = "./assets/pictures/hair2.jpg" alt = "Второй слайд">
+                    <img class = "d-block w-100" src = "../assets/pictures/hair2.jpg" alt = "Второй слайд">
                   </div>
                   <div class = "carousel-item">
-                    <img class = "d-block w-100" src = "./assets/pictures/hair3.jpg" alt = "Третий слайд">
+                    <img class = "d-block w-100" src = "../assets/pictures/hair3.jpg" alt = "Третий слайд">
                   </div>
                   <div class = "carousel-item">
-                    <img class = "d-block w-100" src = "./assets/pictures/hair4.jpg" alt = "Четвёртый слайд">
+                    <img class = "d-block w-100" src = "../assets/pictures/hair4.jpg" alt = "Четвёртый слайд">
                   </div>
                   <div class = "carousel-item">
-                    <img class = "d-block w-100" src = "./assets/pictures/hair5.jpg" alt = "Пятый слайд">
+                    <img class = "d-block w-100" src = "../assets/pictures/hair5.jpg" alt = "Пятый слайд">
                   </div>
                 </div>
                 <a class = "carousel-control-prev" href = "#carouselExampleIndicators" role = "button" data-slide = "prev">
@@ -275,24 +232,8 @@
         </section>
     </main>
 
-<!--   <footer class = "footer">
-        <div class = "col-4 footer__column footer__column--left">
-            <h3 class = "main__h3">ООО "Рога и Копыта"</h1>
-            <p class = "footer__dont-read">не несёт ни за что никакой ответственности и прочая и прочая...</p>
-            ИНН: 4353425345 <br>
-            ОГРН: 23541243142534<br>
-        </div>
-        
-        <div class = "col-3 footer__column footer__column--right">
-            <ul>
-                <li>Телефон: <a class = "footer__invisible-link" href = "tel:+78005553535">+7 (800) 555-35-35<br></a><hr></li>
-                <li>E-mail: <a class = "footer__invisible-link" href = "mailto:TheBestBarber@gmail.com">TheBestBarber@gmail.com</a></li>
-            </ul>
-        </div>
-    </footer> --> 
-
-    <script src = "./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src = "./assets/bootstrap/bootstrap.min.js"></script>
-    <script src = "./assets/script.js"></script>
+    <script src = "../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src = "../assets/bootstrap/bootstrap.min.js"></script>
+    <script src = "./userScript.js"></script>
 </body>
 </html>
