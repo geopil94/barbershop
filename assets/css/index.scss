@@ -2,21 +2,17 @@
 @import "./bootstrap/bootstrap-grid";
 @import "./bootstrap/bootstrap";
 @import "./helpers/mixin";
+@import "./helpers/util";
+@import "./userPageStyles";
+@import "./modalWindows";
 
-/* open-sans-regular - cyrillic */
+// open-sans-regular - cyrillic 
 html {
     font-family: Calibri, sans-serif; // font-family: Camphor, Open Sans, Segoe UI, sans-serif;
 }
+
+// хэдер
 $header-color: rgb(163, 206, 255);
-
-.bordered {
-    border: 1px solid black;
-}
-
-.right-bordered {
-    border-right: 1px solid black;
-}
-
 .header {   
     position: fixed;
     z-index: 1;
@@ -100,48 +96,13 @@ $header-color: rgb(163, 206, 255);
     @include font-size-height-align(24px, 28px, 'center');
 }
 
-.personal-menu {
-    margin-top: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    @include font-size-height-align(20px, 48px, 'center');
-}
 
-.personal-menu__item {
-    .return-link {
-        color: black;
-    }
-    min-width: 80px;
-    flex-grow: 1;
-    transition: font-size 0.8s ease-in-out, color 0.3s, background-color 0.8s ease-in-out;
-}
-
-.personal-menu__item:hover {
-    .return-link {
-        color: white;
-        text-decoration: none;
-    }
-    color: white;
-    font-size: 28px;
-    background-color: darken($header-color, 20%); 
-}
-
-.btn {
-    color: black;
-}
-
-.btn--primary {
-    background-color: darken($header-color, 10%);
-}
-.btn--primary:hover {
-    background-color: darken($header-color, 30%); 
-}
-
+//стилизация кнопок
 .navbar__btn {
     font-size: 24px;
 }
 
+//иконки соцсетей
 .social-media {
     max-height: 120px;
     display: flex;
@@ -178,6 +139,7 @@ $header-color: rgb(163, 206, 255);
     animation-iteration-count: 1;
 }
 
+//содержимое страницы
 .main {
     width: 100%;
     height: 100vh;
@@ -193,27 +155,14 @@ $header-color: rgb(163, 206, 255);
     background: linear-gradient(139deg, rgb(136, 106, 172) 15%, rgb(64, 218, 250) 93%);
 }
 
-.main__h1 {
-    font-weight: bold;
-    @include font-size-height-align(40px, 60px, center);
-}
-
-.main__h2 {
-    vertical-align: top;
-    @include font-size-height-align(32px, 40px, center);
-}
-
-.main__h3 {
-    vertical-align: top;
-    @include font-size-height-align(28px, 32px, center);
-}
-
 .main__button {
+    @include font-size-height-align(28px, 48px, 'center');
     margin-top: 10vh;
     font-size: 40px;
     display: none;
 }
 
+//Услуги
 .main__services {
     padding: 18vh 40vh;
     background: linear-gradient(135deg, rgb(205, 133, 63) 0%, rgb(245, 222, 179) 100%);
@@ -245,11 +194,15 @@ $header-color: rgb(163, 206, 255);
     margin-top: 40px;
 }
 
+
+//новости
 .main__news {
     padding: 18vh 40vh;
     background: linear-gradient(135deg, lighten(rgb(114, 93, 68), 20%) 0%, lighten(rgb(145, 132, 132), 20%) 100%);
 }
 
+
+//работа
 .main__job {
     height: 130vh;
     justify-content: space-between;
@@ -321,12 +274,6 @@ $header-color: rgb(163, 206, 255);
     margin:auto;
 }
 
-.h3--left {
-    margin-top: 40px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
 .main__job-callback {
     @include font-size-height-align(20px, 28px, left);
 }
@@ -359,14 +306,11 @@ $header-color: rgb(163, 206, 255);
     margin-top: 80px;
 }
 
+//контакты
 .main__contacts {
     height: 100vh;
     padding: 18vh 40vh;
     background: linear-gradient(135deg, rgb(190, 149, 149) 0%, rgb(255, 195, 195) 100%);
-}
-
-.h1--bottom-margin {
-    margin-bottom: 60px;
 }
 
 .main__contacts-container {
@@ -419,75 +363,3 @@ $header-color: rgb(163, 206, 255);
 .contacts__dont-read {
     @include font-size-height-align(12px, 12px, center); 
 } 
-
-// формы
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.container {
-    padding: 16px;
-}
-
-.container--bottom {
-    padding-top: 12px;
-}
-
-label {
-    margin-top: 4px;
-    margin-bottom: 0px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    margin-top: 18vh;
-    border: 1px solid #888;
-    width: 30%; 
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.form__btn {
-    margin: 8px 0;
-    width: 100%;
-}
-
-
-// саппорт стили
-.visible {
-    display: block;
-}
-
-.invisible {
-    display: none;
-}
