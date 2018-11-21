@@ -8785,7 +8785,6 @@ html {
 
 .personal-menu__item {
   min-width: 80px;
-  flex-grow: 1;
   transition: font-size 0.8s ease-in-out, color 0.3s, background-color 0.8s ease-in-out; }
   .personal-menu__item .return-link {
     color: black; }
@@ -8797,6 +8796,17 @@ html {
   .personal-menu__item:hover .return-link {
     color: white;
     text-decoration: none; }
+
+.appointmentBlock {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: "right";
+  color: white;
+  background-color: #3d98ff;
+  padding: 0 8px; }
 
 .btn {
   color: black; }
@@ -8867,6 +8877,9 @@ html {
   text-align: center; }
 
 .main__button {
+  font-size: 28px;
+  line-height: 48px;
+  text-align: "center";
   margin-top: 10vh;
   font-size: 40px;
   display: none; }
@@ -9066,6 +9079,14 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box; }
 
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box; }
+
 .container {
   padding: 16px; }
 
@@ -9122,5 +9143,20 @@ label {
 .visible {
   display: block; }
 
+.visible-flex {
+  display: flex; }
+
 .invisible {
   display: none; }
+
+.small-close {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: white;
+  font-size: 24px !important;
+  text-align: end !important;
+  font-weight: bold; }
+
+.appointment-box {
+  position: relative; }
