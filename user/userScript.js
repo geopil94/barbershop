@@ -20,13 +20,21 @@ adminJob.addEventListener('click', function() {
     adminJob.classList.add('job-list__item--active');
 });
 
+// функция для создания текстовой обёртки вокруг данных 
+let pGenerator = function(value) {
+    let p = document.createElement('p');
+    p.textContent = value;
+    return p;
+}
+
 // отрисовка контента личного кабинета и кнопки записи
 let loggedInUser = localStorage.getItem('_lastUserLoggedIn');
 let loggedInUserData = JSON.parse(localStorage.getItem(loggedInUser));
 
 let logInMenu = (function () {
     let loginHi = document.querySelector('.sign-in__log-in');
-    loginHi.innerHTML = `Добро пожаловать,<br> ${loggedInUserData.name}!`;
+    let loggedInUserName = pGenerator(loggedInUserData.name);
+    loginHi.innerText = `Добро пожаловать,\n` + loggedInUserName.textContent + `!`;
     let mainPage = document.querySelector('.main__page');
     let appointmentButton = mainPage.querySelector('.main__button');
     appointmentButton.style.display = 'block';
@@ -60,10 +68,18 @@ function renderDeleteAppointment(item) {
 let renderMyAppointments = (function(evt) {
     let personalBlock = document.querySelector('.personal-block');
     let appointmentBlock = document.createElement('div');
+    if (loggedInUserData.date.length === 0) {
+        appointmentBlock.innerText = `Вы пока никуда не записаны=( \nНужно срочно это исправить!`;
+    }
     loggedInUserData.date.forEach((item, index) => {
         let appointmentBox = document.createElement('div');
         appointmentBox.classList.add('appointment-box');
-        appointmentBox.innerHTML = `<b>Вы записаны:</b><br>${item.date}<br>в ${item.time}<br>на ${item.service}<hr>`;
+        let appointmentDate = pGenerator(item.date);
+        let appointmentTime = pGenerator(item.time);
+        let appointmentService = pGenerator(item.service);
+        let hr = document.createElement('hr');
+        appointmentBox.innerText = `Вы записаны:\n` + appointmentDate.textContent + `\nв ` + appointmentTime.textContent + `\nна ` + appointmentService.textContent;
+        appointmentBox.appendChild(hr);
         renderDeleteAppointment(appointmentBox);
         appointmentBlock.appendChild(appointmentBox);
     });
@@ -77,7 +93,12 @@ crosses = document.querySelectorAll('.small-close');
 crosses = Array.from(crosses);
 crosses.forEach(function(item, index) {
     item.addEventListener('click', function() {
-        loggedInUserData.date.splice(loggedInUserData.date[index], 1);  
+        loggedInUserData.date.splice(loggedInUserData.date[index], 1);
+        if (loggedInUserData.date.length === 0) {
+            let emptyBlock = document.querySelector('.appointmentBlock');
+            emptyBlock.innerText = `Вы пока никуда не записаны=( \nНужно срочно это исправить!`;
+        }
+        localStorage.setItem(loggedInUser, JSON.stringify(loggedInUserData));  
     })
 });
 })();
